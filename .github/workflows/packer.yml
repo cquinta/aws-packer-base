@@ -26,11 +26,11 @@ jobs:
 
       # init plugins
       - name: Init Plugins
-        run: packer init packer/
+        run: packer init .
 
       # build artifact
       - name: Build Artifact
-        run: packer build -color=false -on-error=abort packer/
+        run: packer build -on-error=abort aws-ubuntu.pkr.hcl
         env:
           PACKER_LOG: 1
           PACKER_LOG_PATH: /tmp/packer.log
